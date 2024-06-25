@@ -7,7 +7,7 @@ import Content from './components/MainContent.jsx'
 const App = () => {
     return (
       <div className='app-wrapper'>
-       <Header/>
+       {/* <Header/> */}
         <Nav/>
        <Content/>
     </div>
