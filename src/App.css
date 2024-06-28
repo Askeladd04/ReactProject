@@ -3,6 +3,9 @@ a{
   color: black;
 }
 
+a:active{
+  color :gold;
+}
 .app-wrapper{
   width: 100%;
   max-width: 1500px;

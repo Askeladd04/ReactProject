@@ -13,7 +13,7 @@
   resize: none;
   font-size: 15px;
   background-color: aliceblue;
-  transition-duration: 500ms ease-in
+  transition: 500ms ease-in-out;
  }
 
  .for_comment:focus{

@@ -1,0 +1,22 @@
+.dialogs{
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  height: 100%;
+}
+
+
+
+.dialog{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+
+.messages{
+  background-color:rgb(14, 48, 49)  ;
+  height: 100%;
+}
+
+.message{
+  padding: 10px;
+}
