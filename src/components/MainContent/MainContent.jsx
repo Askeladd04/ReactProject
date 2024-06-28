@@ -2,7 +2,9 @@ import React from 'react'
 import cls from './MainContent.module.css'
 import Post from './myPost/myPosts';
 
-function Content() {
+
+
+function Content(props) {
   return (
     <div className={cls.content}>
           <div>
