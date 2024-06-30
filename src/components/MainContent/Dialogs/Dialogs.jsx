@@ -6,8 +6,8 @@ let dialogEl;
 let messageEl;
 
 function Dialogs(props) {
-   dialogEl = props.userData ? props.userData.map(d => <Dialog name={d.name} id={d.id} />) :  alert("Kod Oshibki")
-   messageEl = props.usersMessage ? props.usersMessage.map(m => <Message message={m.message} />): alert("Kod Oshibki")
+   dialogEl = props.userData ? props.userData.map(d => <Dialog name={d.name} id={d.id} />) :  console.log("Kod Oshibki")
+   messageEl = props.usersMessage ? props.usersMessage.map(m => <Message message={m.message} />): console.log("Kod Oshibki")
   return (
     <div className={cls.dialogs}>
       <div className={cls.dialog_items}>{dialogEl}

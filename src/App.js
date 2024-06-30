@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 
+
 const App = (props) => {
   return (
     <Router>
@@ -16,14 +17,16 @@ const App = (props) => {
         <Nav />
         <div className='app_wrapper_content'>
         <Routes>
-          <Route   path='/content'  element={()=> <Content/>} />
-          <Route path='/dialogs' element={<Dialogs userData={props.userData} usersMessage={props.usersMessage} />} />
+            <Route path='/content' element={<Content posts={props.store.getState().posts} addPost={props.store.addPost.bind(props.store)} newPost={props.store.getState().newPost} updateNewPost={props.store.updateNewPost.bind(props.store)} />} />
+          <Route path='/dialogs' element={<Dialogs userData={props.store.getState().userData} usersMessage={props.store.getState().usersMessage} />} />
         </Routes>
         </div>
         </div>
       </Router>
   ) 
 }
+
+
 
 
 
