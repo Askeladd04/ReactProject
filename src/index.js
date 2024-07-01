@@ -2,16 +2,14 @@ import React from "react";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {store} from './state'
+import {store} from './redux/state'
 import reportWebVitals from './reportWebVitals';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
  let rerenderEntireTree = () => {
 root.render(
-  <React.StrictMode>
     <App store={store} />
-  </React.StrictMode>
 );
 }
 rerenderEntireTree();

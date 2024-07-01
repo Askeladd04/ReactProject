@@ -17,8 +17,8 @@ const App = (props) => {
         <Nav />
         <div className='app_wrapper_content'>
         <Routes>
-            <Route path='/content' element={<Content posts={props.store.getState().posts} addPost={props.store.addPost.bind(props.store)} newPost={props.store.getState().newPost} updateNewPost={props.store.updateNewPost.bind(props.store)} />} />
-          <Route path='/dialogs' element={<Dialogs userData={props.store.getState().userData} usersMessage={props.store.getState().usersMessage} />} />
+            <Route path='/content' element={<Content posts={props.store.getState().posts} dispatch={props.store.dispatch.bind(props.store)} newPost={props.store.getState().newPost}  />} />
+            <Route path='/dialogs' element={<Dialogs userData={props.store.getState().userData} usersMessage={props.store.getState().usersMessage} dispatch={props.store.dispatch.bind(props.store)} newMessage={props.store.getState().newMessage} />} />
         </Routes>
         </div>
         </div>

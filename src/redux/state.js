@@ -1,3 +1,6 @@
+import mainContentReducer from "./MainContentReducer"
+import dialogsReducer from "./DialogsReducer"
+
 
 
 
@@ -20,21 +23,16 @@ export let store = {
       { name: 'Myrat', message: 'HI'},
       { name: 'Andrey' , message: 'How Are you'}
     ],
-    newPost: "Hi Yp"
+    newPost: "Hi Yp",
+    newMessage: ''
   },
   getState() {
     return this._state;
   },
-  addPost(newMessage) {
-    let newPost = {
-      name: 'Myrat', message: newMessage 
-    }
-    this.getState().posts.push(newPost)
-    this.rerenderEntireTree();
-    this.getState().newPost = '';
-  },
-  updateNewPost(text) {
-    this.getState().newPost = text;
+
+  dispatch(action) {
+    this._state = mainContentReducer(this._state, action);
+    this._state = dialogsReducer(this._state, action);
     this.rerenderEntireTree();
   },
   _subscribe(observer) {

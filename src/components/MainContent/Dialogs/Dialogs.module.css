@@ -1,6 +1,8 @@
 .dialogs{
+  position: relative;;
   display: grid;
   grid-template-columns: 2fr 10fr;
+  grid-template-rows: 1fr;
   height: 100%;
 }
 
@@ -13,10 +15,32 @@
 
 
 .messages{
+  max-width: 1fr;
   background-color:rgb(14, 48, 49)  ;
   height: 100%;
 }
 
 .message{
+  padding: 10px;
+}
+
+.forMessage{
+  position:absolute;
+  bottom: 10px;
+  right: 100px;
+  resize: none;
+  place-content: none;
+  border: none;
+  transition-duration: 500ms;
+}
+.forMessage:focus{
+  width: 70%;
+  font-size: 25px;
+}
+
+.sentBtn{
+  position: absolute;
+  right: 0;
+  bottom: 0;
   padding: 10px;
 }
