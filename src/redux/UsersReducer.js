@@ -1,18 +1,11 @@
 export const followAC = (userid) => ({ type: 'FOLLOW', id:  userid });
 export const unfollowAC = (userid) => ({type: 'UNFOLLOW', id: userid})
-export const setUser = (users) => ({type:'SET-USER', users})
+export const setUserAC = (users) => ({type:'SET-USER', users:users})
 
 
 
 let initialState = {
-  userData: [
-    { name: "Dimych", userid: '1', followed: false },
-    { name: "Andrey", userid: '2', followed: false },
-    { name: "Sveta", userid: '3', followed: true },
-    { name: "Sasha", userid: '4', followed: true },
-    { name: "Viktor", userid: '5', followed: false },
-    { name: "Valera", userid: '6', followed: false },
-  ]
+    userData: []
 }
   
 const usersReducer = (state = initialState,action) => {

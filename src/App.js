@@ -5,7 +5,7 @@ import Nav from './components/SideBar/SideBar.jsx'
 import { Routes, Route } from 'react-router-dom';
 import DialogsContainer from './containerComponents/DialogsContainer.jsx';
 import ContentContainer from './containerComponents/MainContentContainer.jsx';
-// import Users from './components/Users/Users.jsx';
+import UsersContainer from './containerComponents/UsersContainer.jsx';
 
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
         <Routes>
             <Route path='/content' element={<ContentContainer  />} />
             <Route path='/dialogs' element={<DialogsContainer  />} />
-            {/* <Route path ='/users'  element={<Users/>}/>  */}
+            <Route path ='/users'  element={<UsersContainer/>}/> 
         </Routes>
         </div>
         </div>
