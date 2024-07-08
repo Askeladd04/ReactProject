@@ -2,27 +2,27 @@ import React from 'react'
 import './App.css'
 import Header from './components/Header/Header.jsx'
 import Nav from './components/SideBar/SideBar.jsx'
-import Content from './components/MainContent/MainContent.jsx'
-import Dialogs from './components/MainContent/Dialogs/Dialogs.jsx'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import DialogsContainer from './containerComponents/DialogsContainer.jsx';
+import ContentContainer from './containerComponents/MainContentContainer.jsx';
+// import Users from './components/Users/Users.jsx';
 
 
+const App = () => {
 
 
-const App = (props) => {
   return (
-    <Router>
       <div className='app-wrapper'>
        <Header/>
         <Nav />
         <div className='app_wrapper_content'>
         <Routes>
-            <Route path='/content' element={<Content posts={props.store.getState().posts} dispatch={props.store.dispatch.bind(props.store)} newPost={props.store.getState().newPost}  />} />
-            <Route path='/dialogs' element={<Dialogs userData={props.store.getState().userData} usersMessage={props.store.getState().usersMessage} dispatch={props.store.dispatch.bind(props.store)} newMessage={props.store.getState().newMessage} />} />
+            <Route path='/content' element={<ContentContainer  />} />
+            <Route path='/dialogs' element={<DialogsContainer  />} />
+            {/* <Route path ='/users'  element={<Users/>}/>  */}
         </Routes>
         </div>
         </div>
-      </Router>
   ) 
 }
 

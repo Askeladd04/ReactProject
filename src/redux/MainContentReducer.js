@@ -1,18 +1,33 @@
 
-export const addNewMessageActionCreater = () => ({ type: 'ADD-MESSAGE' })
-export const updateMessageActionCreator = (text) => ({ type: 'UPDATE-NEW-MESSAGE', message: text })
-const mainContentReducer = (state, action) => {
+export const addPostActionCreator = () => ({ type: 'ADD-NEW-POST' })
+export const updatePostActionCreator = (text) => ({ type: 'UPDATE-NEW-POST', message: text })
+
+
+let initialState = {
+  posts: [
+    { name: 'Myrat', message: 'HI'},
+    { name: 'Andrey' , message: 'How Are you'}
+  ],
+  newPost: "Hi Yp",
+}
+
+
+const mainContentReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD-NEW-POST':
       let newPosts = {
         name: 'Myrat', message: state.newPost
       }
-      state.posts.push(newPosts)
-      state.newPost = '';
-      return state;
+      return {
+        ...state,
+        posts: [...state.posts, newPosts],
+        newPost: ''
+    }
     case 'UPDATE-NEW-POST':
-      state.newPost = action.message;
-      return state;
+      return {
+        ...state,
+        newPost: action.message
+      }
     default: return state;
   }
 }
